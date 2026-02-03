@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>公众号文章生成器</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>公众号文章生成器</h1>
+      <p>输入标题与内容概述，一键生成公众号文章、配图与排版，可继续修订。</p>
+    </header>
+
+    <section class="input-panel">
+      <div class="field">
+        <label for="title">文章标题</label>
+        <input id="title" type="text" placeholder="例如：AI 如何改变内容创作" />
+      </div>
+      <div class="field">
+        <label for="summary">内容概述</label>
+        <textarea id="summary" rows="6" placeholder="写下文章的核心观点、要点或故事脉络..."></textarea>
+      </div>
+      <div class="actions">
+        <button id="generate">生成公众号文章</button>
+        <button id="reset" class="ghost">清空</button>
+      </div>
+    </section>
+
+    <section class="output-panel">
+      <div class="preview">
+        <div class="preview-header">
+          <h2>生成预览</h2>
+          <span class="badge">可编辑</span>
+        </div>
+        <div id="article" class="article" contenteditable="true">
+          <p class="placeholder">生成内容将显示在这里...</p>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h3>配图建议</h3>
+          <div class="image-wrap">
+            <img id="cover" alt="公众号封面建议" />
+          </div>
+          <p id="image-tip" class="muted">等待生成封面配图。</p>
+        </div>
+        <div class="card">
+          <h3>排版提示</h3>
+          <ul id="layout-tips" class="tips">
+            <li>小标题使用「加粗 + 色块」突出段落。</li>
+            <li>每段 2-3 行，便于移动端阅读。</li>
+            <li>关键数据用列表或引用块呈现。</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section class="revision-panel">
+      <div class="field">
+        <label for="revision">修订建议 / 二次指令</label>
+        <textarea id="revision" rows="4" placeholder="例如：语气更正式，增加一个案例；结尾加入引导关注公众号。"></textarea>
+      </div>
+      <button id="apply-revision" class="secondary">应用修订</button>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
